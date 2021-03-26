@@ -1,0 +1,7 @@
+C:\Users\cash\source\repos\MadGabGroup\MadGabGroup\bin\Debug\MadGabGroup.exe.config
+C:\Users\cash\source\repos\MadGabGroup\MadGabGroup\bin\Debug\MadGabGroup.exe
+C:\Users\cash\source\repos\MadGabGroup\MadGabGroup\bin\Debug\MadGabGroup.pdb
+C:\Users\cash\source\repos\MadGabGroup\MadGabGroup\obj\Debug\MadGabGroup.csproj.CoreCompileInputs.cache
+C:\Users\cash\source\repos\MadGabGroup\MadGabGroup\obj\Debug\MadGabGroup.exe
+C:\Users\cash\source\repos\MadGabGroup\MadGabGroup\obj\Debug\MadGabGroup.pdb
+C:\Users\cash\source\repos\MadGabGroup\MadGabGroup\obj\Debug\MadGabGroup.csprojAssemblyReference.cache

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MadGabGroup", "MadGabGroup\MadGabGroup.csproj", "{0B1F761E-DC6C-46B3-9B51-385C6F449DAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B1F761E-DC6C-46B3-9B51-385C6F449DAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B1F761E-DC6C-46B3-9B51-385C6F449DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B1F761E-DC6C-46B3-9B51-385C6F449DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B1F761E-DC6C-46B3-9B51-385C6F449DAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C4BD0EE-0F0E-4FCF-9B85-72496DC60D27}
+	EndGlobalSection
+EndGlobal

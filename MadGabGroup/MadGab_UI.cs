@@ -22,14 +22,6 @@ namespace MadGabGroup
                                     };
 
 
-            //string playerAnswer = " ";
-            //int playerGuesses = 0; //intial player guesses are 0
-            //int guessLimit = 3;    //every player gets 3 chances to guess correctly
-            //bool outOfGuesses = false;
-       
-        
-        
-           
 
         //Start
         private void RunMenu()
@@ -41,9 +33,9 @@ namespace MadGabGroup
                 Console.WriteLine("Welcome to Mad Gab\n" +
                                     "...the game where it's not what you SAY, it's what you HEAR...\n\n");
 
-            Console.WriteLine("Don't be afraid to say the phrase out loud (It might help you out ;) )\n" +
-                $"You only have 3 chances to guess the correct phrase\n" +
-                $"Good luck!\n");
+                Console.WriteLine("Don't be afraid to say the phrase out loud (It might help you out ;) )\n" +
+                    $"You only have 3 chances to guess the correct phrase\n" +
+                    $"Good luck!\n");
                 Console.WriteLine("Enter Player Name here:");
 
                 string playerName = Console.ReadLine();
@@ -82,8 +74,8 @@ namespace MadGabGroup
 
             Console.WriteLine("Press any key to continue to home screen..........");
             Console.ReadKey();
-        }    
-   
+        }
+
         private void CheckAnswers(string playerAnswer)
         {
             string[] answers =
@@ -91,11 +83,11 @@ namespace MadGabGroup
                 "a bottle of coke","a slip of the tongue","batteries not included","did you say something","for he is a jolly good fellow",
                 "i was a teenage vampire","mary kate and ashley oslen","pirates of the carribean","the gulf of mexico"
             };
-        
-            int playerGuesses = 0; 
-            int guessLimit = 3;    
-            bool outOfGuesses = false;
+
+            int playerGuesses = 0;
             int qnum = 1;
+            int guessLimit = 3;
+            bool outOfGuesses = false;
 
             Random random = new Random();
             bool continueToRunTwo = true;
@@ -106,103 +98,92 @@ namespace MadGabGroup
 
                     Console.WriteLine($"Guess the following Phrase: {question}\n");
                     Console.WriteLine($"Enter your Answer: ");
-                      
-                    
-                    
-                    playerAnswer = Console.ReadLine().ToLower();
-                    
 
-                    
-                        //Wrong Answer on First Try
-                        if (!answers.Contains(playerAnswer.ToLower()) && playerGuesses < 2)
+
+
+                    playerAnswer = Console.ReadLine().ToLower();
+
+
+
+                    //Wrong Answer on First Try
+                    if (!answers.Contains(playerAnswer.ToLower()) && playerGuesses < 2)
+                    {
+                        playerGuesses++;
+                        Console.WriteLine("Sorry that's the wrong answer\n" +
+                            $"You have had {playerGuesses} incorrect guesses so far.\n\n");
+
+                        string playerAnswerTwo = Console.ReadLine().ToLower();
+
+                        //Wrong Answer on Second Try
+                        if (!answers.Contains(playerAnswerTwo.ToLower()) && playerGuesses < 3)
                         {
                             playerGuesses++;
                             Console.WriteLine("Sorry that's the wrong answer\n" +
                                 $"You have had {playerGuesses} incorrect guesses so far.\n\n");
-
-                            string playerAnswerTwo = Console.ReadLine().ToLower();
-
-                            //Wrong Answer on Second Try
-                            if (!answers.Contains(playerAnswerTwo.ToLower()) && playerGuesses < 3)
-                            {
-                                playerGuesses++;
-                                Console.WriteLine("Sorry that's the wrong answer\n" +
-                                    $"You have had {playerGuesses} incorrect guesses so far.\n\n");
-                            }
-                            //Right Answer on Second Try
-                            else if (answers.Contains(playerAnswerTwo.ToLower()))
-                            {
-                                Console.WriteLine("Congratulations! Your guess is right!\n");
-                                continueToRunTwo = false;
-                                if (qnum == questions.Length)
-                                {
-                                    qnum++;
-                                    continueToRunTwo = false;
-                                    break;
-                                }
-                                break;
-                            }
-                            string playerAnswerThree = Console.ReadLine().ToLower();
-                            //Wrong answer on Third try
-                            if (!answers.Contains(playerAnswerThree.ToLower()) && playerGuesses < 3)
-                            {
-                                playerGuesses++;
-                                Console.WriteLine("You are out of guesses :(\n" +
-                                "GAME OVER\n");
-                                outOfGuesses = true;
-                                continueToRunTwo = false;
-                                Console.WriteLine("Press any key to continue to home screen..........");
-                                Console.ReadKey();
-                                RunMenu();
-                                
-                            }
-                            //Right answer on Third try
-                            else if (answers.Contains(playerAnswerThree.ToLower()))
-                            {
-                                Console.WriteLine("Congratulations! Your guess is right!\n");
-                                continueToRunTwo = false;
-                                if (qnum == questions.Length)
-                                {
-                                    qnum++;
-                                    continueToRunTwo = false;
-                                    break;
-                                }
-                                break;
-                                
-                            }
-
                         }
-
-                        //Correct Answer On First Try
-                        else if (answers.Contains(playerAnswer.ToLower()))
+                        //Right Answer on Second Try
+                        else if (answers.Contains(playerAnswerTwo.ToLower()))
                         {
                             Console.WriteLine("Congratulations! Your guess is right!\n");
-                            
+
                             if (qnum == questions.Length)
                             {
                                 qnum++;
                                 continueToRunTwo = false;
                                 break;
                             }
-
-
+                            break;
                         }
-                        else
+                        string playerAnswerThree = Console.ReadLine().ToLower();
+                        //Wrong answer on Third try
+                        if (!answers.Contains(playerAnswerThree.ToLower()) && playerGuesses < 3)
                         {
-                            outOfGuesses = true;
-                            //Console.Clear();
+                            playerGuesses++;
                             Console.WriteLine("You are out of guesses :(\n" +
-                                "GAME OVER\n");
+                            "GAME OVER\n");
+                            outOfGuesses = true;
+                            continueToRunTwo = false;
                             Console.WriteLine("Press any key to continue to home screen..........");
                             Console.ReadKey();
                             RunMenu();
+
                         }
+                        //Right answer on Third try
+                        else if (answers.Contains(playerAnswerThree.ToLower()))
+                        {
+                            Console.WriteLine("Congratulations! Your guess is right!\n");
+
+                            if (qnum == questions.Length)
+                            {
+                                qnum++;
+                                continueToRunTwo = false;
+                                break;
+                            }
+                            break;
+
+                        }
+
+                    }
+
+                    //Correct Answer On First Try
+                    else if (answers.Contains(playerAnswer.ToLower()))
+                    {
+                        Console.WriteLine("Congratulations! Your guess is right!\n");
+
+                        if (qnum == questions.Length)
+                        {
+                            qnum++;
+                            continueToRunTwo = false;
+                            break;
+                        }
+
+
+                    }
                 }
 
-                    
-                
+
+
             }
         }
     }
 }
-                  
